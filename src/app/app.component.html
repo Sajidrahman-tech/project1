@@ -1,0 +1,111 @@
+ 
+
+<div class="container"  >
+
+  <div class="row">
+    <div class="col-lg-3" ></div>
+    <div class="col-lg-6" >
+        <div id="ui">
+
+                        <strong  style="align-content: center;">Registration Form</strong>
+
+          <form class="form-group" #form="ngForm">
+                  <div class="row">
+                       <div class="col-lg-6">
+                                <strong>first name:</strong>
+                                 <input  type="text" name="username"[(ngModel)]="userModel.username" required #username="ngModel" [class.is-invalid]="username.invalid" class="form-control">   
+                         </div>
+                         
+                         <div class="col-lg-6">
+                          <strong>last name:</strong>
+                          <input  type="text" name="lastname" placeholder="enter your last name"[(ngModel)]="userModel.lastname" required #lastname="ngModel" [class.is-invalid]="lastname.invalid" class="form-control"  >
+                        
+                        </div>
+                  </div>
+                  <strong>E-mail</strong>
+                  <input [(ngModel)]="userModel.email" type="email" name="email" class="form-control" placeholder="enter the mail id ">  
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <strong>Roll No:</strong>
+                      <input  [(ngModel)]="userModel.rollnumber" type="text" name="rollnumber" class="form-control" placeholder="enter your roll number">
+                    </div>
+
+                    <div class="col-lg-6">
+                      <strong>Date of Birth:</strong>
+                      <input  [(ngModel)]="userModel.dateofbirth" type="date" name="dateofBirth" class="form-control" placeholder="enter your date of Birth" >
+                    </div>   
+                  </div>
+                  <strong>College Name </strong>
+                  <input [(ngModel)]="userModel.college" type="text" name="college" class="form-control" placeholder="enter the college name ">
+                  
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <strong>Department:</strong>
+                      <br>
+                      <select  [(ngModel)]="userModel.department" name="department" class="form-control">
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="IT">IT</option>
+                        <option value="CIVIL">CIVIL</option>
+                        <option value="MECH">MECH</option>
+                        <option value="EEE">EEE</option>
+
+                      </select>
+                    </div>
+                    
+
+                    <div class="col-lg-6">
+                      <strong>Section:</strong>
+                      <select [(ngModel)]="userModel.section" name="section" class="form-control">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                      </select>
+                     
+                    </div>
+                    
+                </div>
+                <br>
+                    
+                <button [disabled]="form.invalid" type="submit" (click)="onclick()" class="btn btn-success btn-block">Submit</button>
+
+          </form>
+
+
+        </div>
+    </div>
+
+    <div class="col-lg-3" ></div>
+  </div>
+</div>
+
+<app-display  *ngIf="submitted"  [model]="form.value" >   </app-display>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
